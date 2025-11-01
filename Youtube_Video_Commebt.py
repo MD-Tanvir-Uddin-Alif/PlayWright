@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+import 
 import time
 
 
@@ -16,6 +17,8 @@ def main():
         page.keyboard.press("Enter")
         
         page.wait_for_selector('ytd-video-renderer', timeout=30000)
+        page.evaluate("window.scrollBy(0, window.innerHeight);")
+        time.sleep()
         
         time.sleep(6)
         browser.close()
