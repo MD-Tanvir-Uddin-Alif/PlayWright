@@ -1,7 +1,13 @@
 from playwright.sync_api import sync_playwright
-import 
+import logging
 import time
 
+
+logging.basicConfig(
+    filename='Youtube_Comment_scraper.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 
 def main():
@@ -12,13 +18,24 @@ def main():
         )
         page = context.new_page()
         page.goto('https://www.youtube.com/', wait_until='domcontentloaded', timeout=50000)
+        logging.info("YOutube Loded sucessfully")
         
         page.locator('input[name="search_query"]').fill("PUBG")
         page.keyboard.press("Enter")
         
         page.wait_for_selector('ytd-video-renderer', timeout=30000)
-        page.evaluate("window.scrollBy(0, window.innerHeight);")
-        time.sleep()
+        for _ in range(3):
+            page.evaluate("window.scrollBy(0, window.innerHeight);")
+            time.sleep(2)
+        
+        loded_videos = page.locator('ytd-video-renderer')
+        count = loded_videos.count()
+        logging.info("Video Loded Sucessfully")
+        
+        for i in range(count):
+            video = loded_videos.nth(i)
+            video_link = video.locator('a[id="thumbnail"]').get_attribute('href')
+            logging.info("video link loded sucessfully")
         
         time.sleep(6)
         browser.close()
