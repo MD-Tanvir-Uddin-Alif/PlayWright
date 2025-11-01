@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+import time
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False ,slow_mo=3)
@@ -12,15 +13,25 @@ with sync_playwright() as p:
         page.evaluate("window.scrollBy(0, window.innerHeight);")
         page.wait_for_timeout(2000)
 
-    page.wait_for_selector('ytd-comment-thread-renderer', timeout=30000)
 
-    all_comments = page.locator('yt-attributed-string[id=content-text]')
+    page.wait_for_selector('//div[@id="comment-container"]', timeout=50000)
+
+    # all_comments = page.locator('yt-attributed-string[id=content-text]')
+    all_comments = page.locator('xpath=//div[@id="comment-container"]')
     count = all_comments.count()
 
     for i in range(count):
-        comment = all_comments.nth(i).inner_text()
+        comment = all_comments.nth(i)
+        spans = comment.locator("yt-attributed-string#content-text span")
+        span_count = spans.count()
+        
+        parts = []
+        for j in range(span_count):
+            parts.append(spans.nth(j).text_content())
+            
+        full_comment = " ".join(parts).strip()
         print(f'-------------------------{i}------------------------------')
-        print(comment)
+        print(full_comment)
 
     page.wait_for_timeout(5000)
     browser.close()
