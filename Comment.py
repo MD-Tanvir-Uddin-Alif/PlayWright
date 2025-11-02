@@ -7,7 +7,7 @@ with sync_playwright() as p:
         user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     )
     page = context.new_page()
-    page.goto("https://www.youtube.com/watch?v=XaoRWJW0VnQ&pp=ygUEUFVCRw%3D%3D")
+    page.goto("https://www.youtube.com/watch?v=idEAABFzpfg")
     
     for i in range(10):
         page.evaluate("window.scrollBy(0, window.innerHeight);")

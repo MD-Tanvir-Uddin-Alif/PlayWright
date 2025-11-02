@@ -1,2 +1,4 @@
 playwright==1.55.0
 logging==0.4.9.6
+pytest==8.4.2
+pytest-playwright== 0.7.1

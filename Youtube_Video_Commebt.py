@@ -92,7 +92,7 @@ def main():
         page = context.new_page()
         page.goto('https://www.youtube.com/', wait_until='domcontentloaded', timeout=50000)
 
-        page.locator('input[name="search_query"]').fill("PUBG")
+        page.locator('input[name="search_query"]').fill("iphone 17")
         page.keyboard.press("Enter")
 
         page.wait_for_selector('ytd-video-renderer', timeout=30000)
