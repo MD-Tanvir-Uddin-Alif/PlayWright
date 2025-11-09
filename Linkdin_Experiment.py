@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+
 from urllib.parse import urlparse
 import time
 import json
