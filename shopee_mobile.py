@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
 
-from behavior_function import simulate_human_behavior  # your updated function (uses evaluate / execute_script fallback)
+from behavior_function import simulate_human_behavior  
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,10 +32,6 @@ def get_expiry(cookie):
 
 
 def main():
-    # Optional: if you run under Git Bash and see "sed/cygpath not found", prefer PowerShell or CMD.
-    # Those warnings are from Playwright's launcher, not the script itself.
-    # You can ignore them, or run in a Windows shell to avoid the messages.
-
     # Example stealth User-Agent (realistic)
     user_agent = (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -43,12 +39,9 @@ def main():
         "Chrome/118.0.5993.90 Safari/537.36"
     )
 
-    # Choose headless True/False depending on your needs
-    HEADLESS = True
-
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=HEADLESS,
+            headless=True,
             args=[
                 "--disable-blink-features=AutomationControlled",
                 "--disable-gpu",
@@ -91,7 +84,7 @@ def main():
                         origQuery(parameters)
                 );
             }
-            """
+            """ 
         )
 
         page = context.new_page()

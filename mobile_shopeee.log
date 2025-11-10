@@ -1,13 +1,4 @@
-2025-11-09 16:11:47,148 - INFO - Opening https://shopee.sg
-2025-11-09 16:12:56,133 - INFO - Opening https://shopee.sg
-2025-11-09 16:13:01,029 - INFO - Added 28 cookies.
-2025-11-09 16:16:12,030 - INFO - Opening https://shopee.sg
-2025-11-09 16:16:17,658 - INFO - Added 28 cookies.
-2025-11-09 16:18:12,618 - INFO - Opening https://shopee.sg
-2025-11-09 16:18:17,586 - INFO - Added 28 cookies.
-2025-11-09 16:18:49,732 - INFO - Opening category page: https://shopee.sg/abc-cat.11000001.11001566?page=0&sortBy=sales
-2025-11-09 16:18:52,808 - INFO - Captured API: https://shopee.sg/api/v4/search/search_items?by=sales&limit=60&match_id=11001566&newest=0&order=desc&page_type=search&scenario=PAGE_CATEGORY&source=SRP&version=2&view_session_id=017331f3-040f-481a-a39c-be3136c885c7
-2025-11-09 16:23:18,224 - INFO - Opening https://shopee.sg
-2025-11-09 16:23:22,713 - INFO - Added 28 cookies.
-2025-11-09 16:23:46,461 - INFO - Opening category page: https://shopee.sg/abc-cat.11000001.11001566?page=0&sortBy=sales
-2025-11-09 16:23:49,030 - INFO - Captured API: https://shopee.sg/api/v4/search/search_items?by=sales&limit=60&match_id=11001566&newest=0&order=desc&page_type=search&scenario=PAGE_CATEGORY&source=SRP&version=2&view_session_id=72538475-0c4b-4d9f-a5a8-0636a95df822
+2025-11-09 16:37:10,392 - INFO - Opening https://shopee.sg
+2025-11-09 16:37:18,125 - INFO - Added 28 cookies.
+2025-11-09 16:37:30,163 - INFO - Opening category page: https://shopee.sg/abc-cat.11000001.11001566?page=0&sortBy=sales
+2025-11-09 16:37:32,635 - INFO - Captured API: https://shopee.sg/api/v4/search/search_items?by=sales&limit=60&match_id=11001566&newest=0&order=desc&page_type=search&scenario=PAGE_CATEGORY&source=SRP&version=2&view_session_id=a31ae519-93c0-417f-827f-3ca456518fde
