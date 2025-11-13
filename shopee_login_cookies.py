@@ -15,8 +15,8 @@ with sync_playwright() as p:
     # Wait for email field to appear (avoids errors)
     page.wait_for_selector('//input[@type="text" or @name="loginKey"]', timeout=10000)
 
-    email = "mdtanviruddin36@gmail.com"
-    password = "Shopee2345"
+    email = ""
+    password = ""
 
     # Fill login fields
     email_field = page.locator('//*[@id="main"]/div/div[2]/div/div[2]/div/div/div/div[2]/div/div[2]/form/div[1]/div[1]/input')
